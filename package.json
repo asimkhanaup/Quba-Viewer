@@ -8,7 +8,8 @@
     "build": "vue-cli-service build",
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
     "pack": "npm run build && electron-builder build --publish=never",
-    "start": "vue-cli-service build && electron ."
+    "start": "vue-cli-service build && electron .",
+    "publish": "electron-builder build --win --publish always"
   },
   "main": "app/main.js",
   "dependencies": {
@@ -50,12 +51,19 @@
       "!*.map",
       "!package.json",
       "!package-lock.json"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "asimkhanaup",
+        "repo": "quba-viewer"
+      }
     ]
   },
   "keywords": [],
   "license": "APL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ZUGFeRD/quba-viewer.git"
+    "url": "https://github.com/asimkhanaup/quba-viewer.git"
   }
 }
